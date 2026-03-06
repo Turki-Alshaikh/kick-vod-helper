@@ -38,7 +38,7 @@ Since this extension is in developer mode, follow these steps to install it:
 
 ## 👨‍💻 Developer | المطور
 
-Developed with ❤️ by **Turki Alshaikh** Owner of [Mfatihy Store](https://mfatihy.com)
+Developed with ❤️ by **Turki Alshaikh** 
 
 ---
 
