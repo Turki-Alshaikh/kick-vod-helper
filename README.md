@@ -2,59 +2,81 @@
 
 [English] | [العربية](#العربية)
 
-**Kick VOD Helper** is a powerful Chrome extension designed to enhance your viewing experience on Kick.com. It automatically saves your progress in recorded streams (VODs) and marks videos you've already watched.
+**Kick VOD Helper** is a robust and lightweight Chrome extension designed to enhance your viewing experience on Kick.com. It solves the common frustration of losing your progress in recorded streams (VODs) and helps you track what you've already watched.
 
 ---
 
 ## ✨ Features | المميزات
 
-* **💾 Auto-Resume:** Saves your last position in any VOD and resumes exactly where you left off.
-* **✅ "Watched" Badge:** Automatically marks completed videos with a green badge in the listings.
-* **🔘 Manual Toggle:** A dedicated button inside the player to manually mark streams as watched.
-* **🌐 Dual Language:** Full support for Arabic and English.
-* **🔒 Privacy:** All data is stored locally in your browser. No tracking, no servers.
+### **English**
+* **💾 Auto-Resume:** Automatically saves your playback position in any VOD and resumes exactly where you left off.
+* **✅ "Watched" Badge:** Displays a sleek green badge on thumbnails for videos you've already completed.
+* **🔘 Manual Toggle:** A dedicated "Mark as Watched" button integrated directly into the Kick player for manual control.
+* **🌐 Dual Language:** Full localized support for both **Arabic** and **English** based on your browser settings.
+* **🔒 Privacy Focused:** All your viewing progress is stored locally in your browser. No tracking, no external servers.
+
+### **العربية**
+* **💾 حفظ تلقائي:** تقوم الإضافة بحفظ مكان وقوفك في أي بث مسجل بدقة، وتستأنف المشاهدة من نفس الثانية فور عودتك.
+* **✅ علامة "تمت المشاهدة":** تظهر علامة خضراء مميزة على الفيديوهات التي أكملتها في القائمة لتسهيل المتابعة.
+* **🔘 تحكم يدوي:** زر مخصص داخل مشغل Kick يتيح لك تحديد البث كـ "تمت المشاهدة" يدوياً بضغطة واحدة.
+* **🌐 دعم اللغات:** دعم كامل ومدمج للغتين **العربية** و **الإنجليزية** بناءً على لغة متصفحك.
+* **🔒 خصوصية تامة:** يتم حفظ جميع بيانات المشاهدة محلياً في متصفحك فقط، دون أي تتبع أو مشاركة خارجية.
 
 ---
 
 ## 🛠 Installation | طريقة التركيب
 
-Since this extension is in developer mode, follow these steps to install it:
+### **English**
+1.  **Download** this repository as a ZIP file and extract it to your computer.
+2.  Open Google Chrome and navigate to `chrome://extensions/`.
+3.  Enable **Developer mode** using the toggle in the top right corner.
+4.  Click the **Load unpacked** button.
+5.  Select the folder where you extracted the extension files.
+6.  Refresh your Kick.com page and start watching!
 
-1.  **Download** this repository as a ZIP file and extract it.
-2.  Open your browser and go to `chrome://extensions/`.
-3.  Enable **Developer mode** (top right corner).
-4.  Click **Load unpacked** and select the folder where you extracted the files.
-5.  Enjoy a better Kick experience!
+### **العربية**
+1.  **قم بتحميل** المستودع كملف ZIP وقم بفك الضغط عنه في جهازك.
+2.  افتح متصفح كروم واذهب إلى الرابط: `chrome://extensions/`.
+3.  قم بتفعيل **وضع المطور (Developer mode)** من الزاوية العلوية اليمنى.
+4.  اضغط على زر **تحميل إضافة غير محزومة (Load unpacked)**.
+5.  اختر المجلد الذي يحتوي على ملفات الإضافة التي قمت بفك ضغطها.
+6.  قم بتحديث صفحة Kick.com واستمتع بتجربة مشاهدة أفضل!
 
 ---
 
 ## 📸 Screenshots | صور الشرح
 
-| Mark as Watched Button | Watched Badge in List |
-|---|---|
+| Player Interface | Video List View |
+|:---:|:---:|
 | ![Manual Button](assets/screenshot1.png) | ![Badge](assets/screenshot2.png) |
+| *The "Mark as Watched" button under the player* | *The green badge on the video thumbnails* |
+
+---
+
+## 💻 Technologies Used | التقنيات المستخدمة
+
+* **JavaScript (Vanilla)**
+* **Chrome Extension API (Manifest V3)**
+* **CSS3** (Custom UI Injection)
+* **Chrome Local Storage API**
 
 ---
 
 ## 👨‍💻 Developer | المطور
 
-Developed with ❤️ by **Turki Alshaikh** ([@turkialshaikh](https://github.com/turkialshaikh))
+Developed with ❤️ by **Turki Alshaikh**
+GitHub: [@Turki-Alshaikh](https://github.com/Turki-Alshaikh)
 
 ---
 
 <a name="العربية"></a>
-## 🇸🇦 النسخة العربية
+## 🇸🇦 النسخة العربية (الملخص)
 
-**مساعد كيك** هي إضافة متصفح قوية مصممة لتحسين تجربة المشاهدة على موقع Kick.com. تقوم الإضافة بحفظ تقدمك تلقائياً في البثوث المسجلة وتمييز الفيديوهات التي شاهدتها مسبقاً.
-
-### **لماذا تستخدم هذه الإضافة؟**
-* **حفظ تلقائي:** لا تقلق بشأن ضياع وقتك عند إغلاق الصفحة، الإضافة ستعيدك لنفس الثانية.
-* **تنظيم المشاهدة:** ميز الفيديوهات التي شاهدتها بعلامة خضراء أنيقة لتسهيل متابعة السلاسل.
-* **تحكم كامل:** يمكنك تحديد أي بث كـ "تمت المشاهدة" يدوياً من داخل المشغل بضغطة واحدة.
+**مساعد كيك** هي إضافة متصفح مصممة خصيصاً لمتابعي موقع Kick.com. تهدف الإضافة لجعل تجربة مشاهدة البثوث المسجلة أكثر سلاسة وتنظيماً من خلال ميزات الحفظ التلقائي للوقت وتمييز الفيديوهات المكتملة. جميع الأكواد برمجت لتعمل بكفاءة عالية دون التأثير على أداء المتصفح.
 
 ---
 
-## 🤝 Support & Links | الروابط
+## 📄 License | الرخصة
 
-* **GitHub Repository:** [turkialshaikh/kick-vod-helper](https://github.com/turkialshaikh)
-* **Developer Profile:** [@turkialshaikh](https://github.com/turkialshaikh)
+This project is open-source and available under the **MIT License**.
+هذا المشروع مفتوح المصدر ومتاح تحت رخصة **MIT**.
