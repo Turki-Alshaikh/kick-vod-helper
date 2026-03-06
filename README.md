@@ -38,7 +38,7 @@ Since this extension is in developer mode, follow these steps to install it:
 
 ## 👨‍💻 Developer | المطور
 
-Developed with ❤️ by **Turki Alshaikh** 
+Developed with ❤️ by **Turki Alshaikh** ([@turkialshaikh](https://github.com/turkialshaikh))
 
 ---
 
@@ -49,12 +49,12 @@ Developed with ❤️ by **Turki Alshaikh**
 
 ### **لماذا تستخدم هذه الإضافة؟**
 * **حفظ تلقائي:** لا تقلق بشأن ضياع وقتك عند إغلاق الصفحة، الإضافة ستعيدك لنفس الثانية.
-* **تنظيم المشاهدة:** ميز الفيديوهات التي شاهدتها بعلامة خضراء أنيقة.
-* **تحكم كامل:** يمكنك تحديد أي بث كـ "تمت المشاهدة" يدوياً من داخل المشغل.
+* **تنظيم المشاهدة:** ميز الفيديوهات التي شاهدتها بعلامة خضراء أنيقة لتسهيل متابعة السلاسل.
+* **تحكم كامل:** يمكنك تحديد أي بث كـ "تمت المشاهدة" يدوياً من داخل المشغل بضغطة واحدة.
 
 ---
 
-## 🤝 Support & Links | الدعم والروابط
+## 🤝 Support & Links | الروابط
 
-* **Store:** [mfatihy.com](https://mfatihy.com)
-* **GitHub:** [@turkialshaikh](https://github.com/turkialshaikh)
+* **GitHub Repository:** [turkialshaikh/kick-vod-helper](https://github.com/turkialshaikh)
+* **Developer Profile:** [@turkialshaikh](https://github.com/turkialshaikh)
