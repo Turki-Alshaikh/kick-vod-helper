@@ -1,0 +1,6 @@
+{
+  "appName": { "message": "Kick VOD Helper" },
+  "appDesc": { "message": "Saves your last position in Kick VODs and marks watched videos." },
+  "watched": { "message": "Watched ✓" },
+  "markAsWatched": { "message": "Mark as Watched" }
+}
