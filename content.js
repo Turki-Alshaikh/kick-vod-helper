@@ -6,7 +6,7 @@ const i18n = {
 
 let videoElement = null;
 let currentVideoId = null;
-let hasJumped = false; // قفل أمان لمنع حلقة التكرار
+let hasJumped = false; // قفل أمان لضمان القفز مرة واحدة فقط عند التحميل
 
 function parseDuration(str) {
     const parts = str.split(':').map(Number);
@@ -22,11 +22,10 @@ function handleVideoPlayer() {
 
     const vId = match[1];
 
-    // إذا انتقل المستخدم لفيديو جديد، نصفر حالة القفز
     if (vId !== currentVideoId) {
         currentVideoId = vId;
         hasJumped = false;
-        console.log("🎥 تم رصد فيديو جديد، جاهز للعمل...");
+        console.log("🎥 تم رصد فيديو جديد...");
     }
 
     videoElement = document.querySelector('video');
@@ -35,34 +34,38 @@ function handleVideoPlayer() {
         return;
     }
 
-    // حقن الزر تحت الفيديو
     injectManualButton(vId);
 
-    // محاولة القفز للوقت المحفوظ (مرة واحدة فقط)
+    // تنفيذ القفزة الأولى فقط عند تحميل الفيديو
     if (!hasJumped) {
         chrome.storage.local.get([vId], (res) => {
             const savedTime = res[vId];
             if (savedTime && savedTime < 999998 && savedTime > 5) {
-                // ننتظر حتى يبدأ الفيديو فعلياً لتجنب التضارب مع المشغل
-                const jumpOnce = () => {
-                    if (videoElement.currentTime < savedTime) {
-                        videoElement.currentTime = savedTime;
-                        hasJumped = true;
-                        console.log("🚀 قفزة ناجحة إلى الثامنة:", savedTime);
-                        videoElement.removeEventListener('playing', jumpOnce);
-                    }
+                const initialJump = () => {
+                    videoElement.currentTime = savedTime;
+                    hasJumped = true; // تفعيل القفل لمنع أي قفز تلقائي آخر
+                    console.log("🚀 تم استعادة وقت المشاهدة:", savedTime);
+                    videoElement.removeEventListener('playing', initialJump);
                 };
-                videoElement.addEventListener('playing', jumpOnce);
+                videoElement.addEventListener('playing', initialJump);
             } else {
-                hasJumped = true; // لا يوجد وقت أو الوقت يدوي، نعتبر القفزة تمت
+                hasJumped = true; 
             }
         });
     }
 
-    // حفظ الوقت تلقائياً (بشرط عدم الصفر لتجنب الكتابة فوق الوقت المحفوظ عند التعليق)
+    // حفظ الوقت عند التغيير اليدوي (التقديم أو التأخير)
+    videoElement.onseeked = () => {
+        if (!hasJumped) return; // عدم الحفظ قبل إتمام القفزة الأولى
+        const seekedTime = Math.floor(videoElement.currentTime);
+        chrome.storage.local.set({ [vId]: seekedTime });
+        console.log("📍 تم حفظ الموقع اليدوي الجديد:", seekedTime);
+    };
+
+    // حفظ الوقت تلقائياً كل 10 ثوانٍ أثناء المشاهدة العادية
     videoElement.ontimeupdate = () => {
         const now = Math.floor(videoElement.currentTime);
-        if (now > 0 && now % 10 === 0 && hasJumped) { // حفظ كل 10 ثوانٍ لزيادة الأداء
+        if (now > 0 && now % 10 === 0 && hasJumped) {
             chrome.storage.local.get([vId], (res) => {
                 if (res[vId] !== 999999) {
                     chrome.storage.local.set({ [vId]: now });
@@ -76,7 +79,6 @@ function handleVideoPlayer() {
 function injectManualButton(vId) {
     if (document.getElementById('kick-helper-btn')) return;
 
-    // البحث عن صف الأزرار تحت الفيديو
     const actionRow = document.querySelector('.flex.items-center.gap-2.self-end.py-0\\.5');
     if (!actionRow) return;
 
@@ -139,7 +141,6 @@ function markListVideos() {
     });
 }
 
-// المراقبة الذكية
 const observer = new MutationObserver(() => {
     markListVideos();
     if (window.location.pathname.includes('/video')) {
@@ -148,6 +149,5 @@ const observer = new MutationObserver(() => {
 });
 observer.observe(document.body, { childList: true, subtree: true });
 
-// تشغيل أولي
 handleVideoPlayer();
 markListVideos();
