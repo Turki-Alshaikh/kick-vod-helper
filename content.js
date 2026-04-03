@@ -84,8 +84,7 @@ function injectManualButton(vId) {
 
     const btn = document.createElement('div');
     btn.id = 'kick-helper-btn';
-    btn.style = "display:flex; align-items:center; gap:6px; background:#191b1f; padding:6px 12px; border-radius:6px; margin-right:10px; border:1px solid transparent; transition:0.3s; cursor:pointer;";
-    btn.innerHTML = `<input type="checkbox" id="chk-${vId}" style="accent-color:#53fc18; cursor:pointer; width:16px; height:16px;"> 
+btn.style = "display:flex; align-items:center; gap:6px; background:#191b1f; padding:6px 12px; border-radius:8px; margin-right:8px; border:1px solid #3d4147; transition:0.3s; cursor:pointer; height:36px; box-sizing: border-box;";    btn.innerHTML = `<input type="checkbox" id="chk-${vId}" style="accent-color:#53fc18; cursor:pointer; width:16px; height:16px;"> 
                      <label for="chk-${vId}" style="color:white; font-weight:bold; cursor:pointer; font-size:13px; user-select:none;">${i18n.markAsWatched}</label>`;
 
     const chk = btn.querySelector('input');
