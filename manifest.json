@@ -10,8 +10,15 @@
   },
   "content_scripts": [
     {
-      "matches": ["*://kick.com/*"],
+      "matches": ["*://*.kick.com/*", "*://kick.com/*"],
       "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://*.kick.com/*", "*://kick.com/*"],
+      "js": ["caster.js"],
+      "world": "MAIN",
       "run_at": "document_idle"
     }
   ]
