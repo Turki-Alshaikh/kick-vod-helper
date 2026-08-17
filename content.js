@@ -8,18 +8,6 @@ let videoElement = null;
 let currentVideoId = null;
 let hasJumped = false; // قفل أمان لضمان القفز مرة واحدة فقط عند التحميل
 
-// --- إضافات ميزة الجودة المحفوظة ---
-let preferredQuality = null;
-let qualityApplied = false;
-
-// جلب الجودة المحفوظة من الذاكرة المحلية عند تهيئة الإضافة
-chrome.storage.local.get(['saved_video_quality'], (res) => {
-    if (res.saved_video_quality) {
-        preferredQuality = res.saved_video_quality;
-    }
-});
-// ---------------------------------
-
 function parseDuration(str) {
     const parts = str.split(':').map(Number);
     if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2];
@@ -37,7 +25,6 @@ function handleVideoPlayer() {
     if (vId !== currentVideoId) {
         currentVideoId = vId;
         hasJumped = false;
-        qualityApplied = false; // إعادة تعيين قفل الجودة للفيديو الجديد
         console.log("🎥 تم رصد فيديو جديد...");
     }
 
@@ -48,7 +35,6 @@ function handleVideoPlayer() {
     }
 
     injectManualButton(vId);
-    handleAutoQuality(); // استدعاء دالة الجودة
 
     // تنفيذ القفزة الأولى فقط عند تحميل الفيديو
     if (!hasJumped) {
@@ -98,8 +84,7 @@ function injectManualButton(vId) {
 
     const btn = document.createElement('div');
     btn.id = 'kick-helper-btn';
-    btn.style = "display:flex; align-items:center; gap:6px; background:#191b1f; padding:6px 12px; border-radius:8px; margin-right:8px; border:1px solid #3d4147; transition:0.3s; cursor:pointer; height:36px; box-sizing: border-box;";
-    btn.innerHTML = `<input type="checkbox" id="chk-${vId}" style="accent-color:#53fc18; cursor:pointer; width:16px; height:16px;"> 
+btn.style = "display:flex; align-items:center; gap:6px; background:#191b1f; padding:6px 12px; border-radius:8px; margin-right:8px; border:1px solid #3d4147; transition:0.3s; cursor:pointer; height:36px; box-sizing: border-box;";    btn.innerHTML = `<input type="checkbox" id="chk-${vId}" style="accent-color:#53fc18; cursor:pointer; width:16px; height:16px;"> 
                      <label for="chk-${vId}" style="color:white; font-weight:bold; cursor:pointer; font-size:13px; user-select:none;">${i18n.markAsWatched}</label>`;
 
     const chk = btn.querySelector('input');
@@ -153,39 +138,6 @@ function markListVideos() {
         }
         card.setAttribute('data-processed', 'true');
     });
-}
-
-// 4. ميزة حفظ وتطبيق الجودة تلقائياً (الجديدة)
-function handleAutoQuality() {
-    // البحث عن العناصر التي تحتوي على خيارات الجودة
-    const qualityOptions = document.querySelectorAll('button, span, div');
-    
-    qualityOptions.forEach(el => {
-        const text = (el.innerText || "").trim();
-        
-        // التحقق من أن النص يمثل دقة (مثل 1080p60, 720p, 480p)
-        if (/^[0-9]{3,4}p([0-9]{2})?$/i.test(text) && !el.hasAttribute('data-quality-listener')) {
-            el.setAttribute('data-quality-listener', 'true');
-            
-            // حفظ اختيار المستخدم عند النقر على الجودة
-            el.addEventListener('click', () => {
-                chrome.storage.local.set({ 'saved_video_quality': text });
-                preferredQuality = text;
-                console.log("⚙️ تم حفظ الجودة كافتراضية:", text);
-            });
-        }
-    });
-
-    // تطبيق الجودة تلقائياً إذا كانت متوفرة ولم يتم تطبيقها بعد في هذا الفيديو
-    if (preferredQuality && !qualityApplied && videoElement && videoElement.readyState >= 1) {
-        const targetOption = Array.from(qualityOptions).find(el => (el.innerText || "").trim() === preferredQuality);
-        
-        if (targetOption) {
-            targetOption.click();
-            qualityApplied = true;
-            console.log("✅ تم تطبيق الجودة المحفوظة تلقائياً:", preferredQuality);
-        }
-    }
 }
 
 const observer = new MutationObserver(() => {
