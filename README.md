@@ -88,17 +88,17 @@ GitHub: [@Turki-Alshaikh](https://github.com/Turki-Alshaikh)
 
 This project is open-source and available under the **MIT License**.
 هذا المشروع مفتوح المصدر ومتاح تحت رخصة **MIT**.
-
-## 🚀 Sponsored & Maintained By | برعاية متجر مفاتيحي
-
-This project is developed and maintained as an open-source initiative. If this tool streamlined your workflow or saved you time, consider supporting the developer by upgrading your digital workspace through our store:
-
-**[Mfatihy Store (متجر مفاتيحي)](https://mfatihy.com)** is your premium destination for genuine software solutions. We provide authentic **[Windows and Office keys](https://mfatihy.com/Office/c2015509396)**, top-tier antivirus subscriptions, and professional design tools (Adobe & Autodesk) at unbeatable prices with instant automated delivery.
-
 ---
 
-تم تطوير هذا المشروع البرمجي وإتاحته مجاناً لدعم مجتمع المطورين والمستخدمين. إذا ساعدتك هذه الأداة في إنجاز مهامك، يمكنك دعم استمرارية التطوير من خلال زيارة متجرنا الرقمي:
+## 🎮 Supported By | بدعم من متجر مفاتيحي
 
-**[متجر مفاتيحي (Mfatihy)](https://mfatihy.com)** هو الوجهة الأولى والموثوقة في السعودية والخليج للحصول على **[تراخيص البرامج الأصلية](https://mfatihy.com)**. نوفر لك **[مفاتيح تفعيل ويندوز وأوفيس](https://mfatihy.com/windows-keys/c1242520213)** مدى الحياة، بالإضافة إلى اشتراكات برامج التصميم الهندسية والاحترافية بأفضل الأسعار، مع ضمان التسليم الفوري والتفعيل الآمن. 
+Just as this extension upgrades your streaming and viewing experience on Kick, you can level up your entire PC and gaming setup with **[Mfatihy Store](https://mfatihy.com)**. We provide gamers and professionals with genuine **[Windows and Office keys](https://mfatihy.com/windows-keys/c1242520213)**, premium design software, and digital **[PC gaming keys](https://mfatihy.com)** at highly competitive prices. Enjoy a seamless digital experience with reliable delivery and full technical support.
 
-[![Visit Mfatihy](https://img.shields.io/badge/Visit_Store-Mfatihy.com-2ea44f?style=for-the-badge&logo=shopify)](https://mfatihy.com)
+---
+كما تعمل هذه الإضافة على ترقية تجربة متابعتك للبثوث المسجلة، يمكنك الارتقاء بأداء جهازك الشخصي وتجربتك في الألعاب من خلال **[متجر مفاتيحي (Mfatihy)](https://mfatihy.com)**. 
+
+نوفر للاعبين والمحترفين **[تراخيص ويندوز وأوفيس الأصلية](https://mfatihy.com/Office/c2015509396)**، واشتراكات برامج التصميم، بالإضافة إلى الألعاب الرقمية بأسعار تنافسية جداً. وجهتك الموثوقة لضمان أداء مستقر وآمن لجهازك بعيداً عن البرمجيات الخبيثة، مع التزامنا بتقديم دعم فني متكامل وتسليم موثوق لجميع منتجاتنا.
+
+[![Upgrade Your Setup](https://img.shields.io/badge/Upgrade_Your_Setup-Mfatihy.com-6441a5?style=for-the-badge&logo=twitch&logoColor=white)](https://mfatihy.com)
+
+---
