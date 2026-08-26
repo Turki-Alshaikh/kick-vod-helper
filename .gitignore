@@ -1,0 +1,32 @@
+# 1. Chrome Extension Files (ملفات إضافة كروم)
+# تجاهل المفتاح الخاص بالإضافة (مهم جداً للأمان حتى لا يتم سرقته)
+*.pem
+# تجاهل النسخ المحزومة والمضغوطة من الإضافة
+*.crx
+*.zip
+*.tar.gz
+
+# 2. OS Generated Files (ملفات النظام المخفية)
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# 3. Editor Directories (ملفات محررات الأكواد مثل VS Code)
+.vscode/
+.idea/
+*.suo
+*.sln
+
+# 4. Node.js (في حال استخدمت npm مستقبلاً لمكتبات مساعدة)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# 5. Environment Variables (ملفات البيئة إن وُجدت)
+.env
+.env.local
